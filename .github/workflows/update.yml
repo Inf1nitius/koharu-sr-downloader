@@ -1,0 +1,20 @@
+name: Update README Image
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Update
+        run: python update-readme.py
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update README.md
+          file_pattern: README.md
