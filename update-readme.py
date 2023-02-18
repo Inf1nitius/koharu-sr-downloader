@@ -26,17 +26,25 @@ def get_url():
         ids = ids.readlines()
         if time.time() - get_id_updated() <= 86400:
             latest_sr = id_pad(ids[-1].strip())
-            return f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_60{latest_sr}.png"
+            return (
+                "Latest Koharu Skill Record",
+                f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_60{latest_sr}.png",
+            )
         else:
             random_sr = id_pad(random.choice(ids).strip())
-            return f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_6{random.choice((0,1))}{random_sr}.png"
+            return (
+                "Daily Random Koharu",
+                f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_6{random.choice((0,1))}{random_sr}.png",
+            )
 
 
 def update_README():
     with open("TEMPLATE.md", "r", encoding="utf-8") as TEMPLATE:
         template = jinja2.Template(TEMPLATE.read())
         open("README.md", "w", encoding="utf-8").write(
-            template.render(id_updated=id_updated_date(), url=get_url())
+            template.render(
+                id_updated=id_updated_date(), caption=get_url()[0], url=get_url()[1]
+            )
         )
 
 
