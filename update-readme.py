@@ -10,6 +10,11 @@ def get_id_updated():
     commit = next(repo.iter_commits(paths="id.txt", max_count=1))
     return commit.committed_date
 
+
+def id_updated_date():
+    return time.strftime("%d %b %Y %H:%M:%S UTC", time.gmtime(get_id_updated()))
+
+
 def id_pad(id):
     while len(id) < 5:
         id = f"0{id}"
@@ -22,15 +27,16 @@ def get_url():
         if time.time() - get_id_updated() <= 86400:
             latest_sr = id_pad(ids[-1].strip())
             return f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_60{latest_sr}.png"
-        else:    
+        else:
             random_sr = id_pad(random.choice(ids).strip())
             return f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_6{random.choice((0,1))}{random_sr}.png"
+
 
 def update_README():
     with open("TEMPLATE.md", "r", encoding="utf-8") as TEMPLATE:
         template = jinja2.Template(TEMPLATE.read())
         open("README.md", "w", encoding="utf-8").write(
-            template.render(id_updated=get_id_updated(), url=get_url())
+            template.render(id_updated=id_updated_date(), url=get_url())
         )
 
 
