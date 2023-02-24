@@ -25,7 +25,7 @@ def get_url():
     with open("id.txt", "r") as ids:
         ids = ids.readlines()
         if time.time() - get_id_updated() <= 86400:
-            latest_sr = id_pad(ids[49].strip())
+            latest_sr = id_pad(ids[-1].strip())
             return (
                 "Latest Koharu Skill Record",
                 f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_60{latest_sr}.png",
