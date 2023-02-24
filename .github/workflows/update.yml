@@ -18,5 +18,5 @@ jobs:
         run: python update-readme.py
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update README.md
+          commit_message: Automated Update of README.md
           file_pattern: README.md
