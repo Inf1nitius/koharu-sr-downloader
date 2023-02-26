@@ -1,6 +1,8 @@
 # Koharu best girl
 
 Downloads all images of Koharu available from https://github.com/Nayuta-Kani/SAOIF-Skill-Records-Database.
+Images will be downloaded to the "images" folder and sorted into their respective folders of "icon", "evolve", and "gacha".
+To use this, either clone the repository and run "downloader.py", or download only "downloader.py", "id.txt", and "images".
 
 > **id.txt is updated manually.** *Last updated on 24 Feb 2023 08:17:12 UTC*
 

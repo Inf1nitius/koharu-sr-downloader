@@ -8,15 +8,15 @@ def get_images():
                 id = f"0{id.strip()}"
             urllib.request.urlretrieve(
                 f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_60{id}.png",
-                f"sr_icon_l_60{id}.png",
+                f"images/icon/sr_icon_l_60{id}.png",
             )
             urllib.request.urlretrieve(
                 f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_61{id}.png",
-                f"sr_icon_l_61{id}.png",
+                f"images/evolve/sr_icon_l_61{id}.png",
             )
             urllib.request.urlretrieve(
                 f"https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srgachas/gacha_60{id}.png",
-                f"sr_gacha_60{id}.png",
+                f"images/gacha/sr_gacha_60{id}.png",
             )
 
 
