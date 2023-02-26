@@ -15,7 +15,7 @@ def id_updated_date():
     return time.strftime("%d %b %Y %H:%M:%S UTC", time.gmtime(get_id_updated()))
 
 
-def id_pad(id):  # sourcery skip: avoid-builtin-shadow
+def id_pad(id):
     while len(id) < 5:
         id = f"0{id}"
     return id
