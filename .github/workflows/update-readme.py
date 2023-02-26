@@ -7,7 +7,7 @@ import time
 def get_id_updated():
     repo = Repo(".")
     assert not repo.bare
-    commit = next(repo.iter_commits(paths="./id.txt", max_count=1))
+    commit = next(repo.iter_commits(paths="id.txt", max_count=1))
     return commit.committed_date
 
 
@@ -22,7 +22,7 @@ def id_pad(id):  # sourcery skip: avoid-builtin-shadow
 
 
 def get_url():
-    with open("./id.txt", "r") as ids:
+    with open("id.txt", "r") as ids:
         ids = ids.readlines()
         if time.time() - get_id_updated() <= 86400:
             latest_sr = id_pad(ids[-1].strip())
@@ -39,7 +39,7 @@ def get_url():
 
 
 def update_README():
-    with open("TEMPLATE.md", "r", encoding="utf-8") as TEMPLATE:
+    with open(".github/workflows/TEMPLATE.md", "r", encoding="utf-8") as TEMPLATE:
         template = jinja2.Template(TEMPLATE.read())
         open("./README.md", "w", encoding="utf-8").write(
             template.render(
