@@ -39,7 +39,7 @@ def get_url():
 
 
 def update_README():
-    with open(".github/workflows/TEMPLATE.md", "r", encoding="utf-8") as TEMPLATE:
+    with open(".github/workflows/readme-template.md", "r", encoding="utf-8") as TEMPLATE:
         template = jinja2.Template(TEMPLATE.read())
         open("./README.md", "w", encoding="utf-8").write(
             template.render(
