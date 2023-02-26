@@ -14,8 +14,8 @@ jobs:
           python-version: "3.11"
       - name: Install pre-requisites
         run: python -m pip install jinja2 GitPython
-      - name: Update
-        run: python .github/workflows/update-readme.py
+      - name: Update README
+        run: python .github/workflows/update_readme.py
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automated Update of README.md
