@@ -15,7 +15,7 @@ Images will be downloaded to the *[images][i]* folder and sorted into their resp
 
 ## Daily Random Koharu
 
-<img src="https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_6101127.png" title="Daily Random Koharu" alt="An Image of Koharu" width="500" height="500">
+<img src="https://raw.githubusercontent.com/Nayuta-Kani/SAOIF-Skill-Records-Database/master/srimages/sr_icon_l_6100932.png" title="Daily Random Koharu" alt="An Image of Koharu" width="500" height="500">
 
 
 
